@@ -9,8 +9,6 @@ export default async function deploy({
   remotePath,
 }) {
   const ssh = new NodeSSH();
-  const failed = [];
-  const successFul = [];
 
   try {
     await ssh.connect({
@@ -31,14 +29,14 @@ export default async function deploy({
       },
       tick: (localPath, remotePath, err) => {
         if (err) {
-          failed.push(localPath);
-        } else successFul.push(localPath);
+          console.log(localPath, " failed");
+        } else {
+          console.log(localPath, " successful");
+        }
       },
     });
 
     console.log("the directory transfer was", status ? "successful" : "unsuccessful");
-    console.log("failed transfers", failed.join(", "));
-    console.log("successful transfers", successFul.join(", "));
   } catch (err) {
     console.log(err);
   }
