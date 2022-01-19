@@ -7,6 +7,7 @@ export default async function deploy({
   userPassword,
   localPath,
   remotePath,
+  concurrency = 7,
 }) {
   const ssh = new NodeSSH();
 
@@ -19,7 +20,7 @@ export default async function deploy({
 
     const status = await ssh.putDirectory(localPath, remotePath, {
       recursive: true,
-      concurrency: 3,
+      concurrency: concurrency,
       validate: itemPath => {
         const baseName = path.basename(itemPath);
         return (
