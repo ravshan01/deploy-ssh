@@ -5,6 +5,9 @@ export default async function deploy({
   hostIP,
   userName,
   userPassword,
+  privateKey,
+  privateKetPath,
+  passphrase,
   localPath,
   remotePath,
   concurrency = 7,
@@ -16,6 +19,9 @@ export default async function deploy({
       host: hostIP,
       username: userName,
       password: userPassword,
+      privateKey,
+      privateKetPath,
+      passphrase,
     });
 
     const status = await ssh.putDirectory(localPath, remotePath, {
