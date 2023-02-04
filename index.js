@@ -6,7 +6,7 @@ export default async function deploy({
   userName,
   userPassword,
   privateKey,
-  privateKetPath,
+  privateKeyPath,
   passphrase,
   localPath,
   remotePath,
@@ -20,7 +20,7 @@ export default async function deploy({
       username: userName,
       password: userPassword,
       privateKey,
-      privateKetPath,
+      privateKeyPath,
       passphrase,
     });
 
