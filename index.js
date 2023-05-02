@@ -1,5 +1,5 @@
-const path = require("path");
-const { NodeSSH } = require("node-ssh");
+import { path } from 'path';
+import { NodeSSH } from 'node-ssh';
 
 export default async function deploy({
   hostIP,
