@@ -1,4 +1,4 @@
-import { path } from 'path';
+import path from 'path';
 import { NodeSSH } from 'node-ssh';
 
 export default async function deploy({
