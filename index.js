@@ -37,6 +37,7 @@ export default async function deploy({
       tick: (localPath, remotePath, err) => {
         if (err) {
           console.log(localPath, " failed");
+          console.log(err)
         } else {
           console.log(localPath, " successful");
         }
