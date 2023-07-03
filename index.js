@@ -3,6 +3,7 @@ import { NodeSSH } from 'node-ssh';
 
 export default async function deploy({
   hostIP,
+  port,
   userName,
   userPassword,
   privateKey,
@@ -17,6 +18,7 @@ export default async function deploy({
   try {
     await ssh.connect({
       host: hostIP,
+      port,
       username: userName,
       password: userPassword,
       privateKey,
