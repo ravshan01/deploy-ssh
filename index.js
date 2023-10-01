@@ -26,6 +26,10 @@ export default async function deploy({
       passphrase,
     });
 
+    const command = await ssh.execCommand(`rm -rf ${remotePath}/*`);
+    console.log(`Start 'rm -rf ${remotePath}/*'`);
+    console.log(command);
+
     const status = await ssh.putDirectory(localPath, remotePath, {
       recursive: true,
       concurrency: concurrency,
